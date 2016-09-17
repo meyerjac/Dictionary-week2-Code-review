@@ -32,4 +32,7 @@ public class Word {
   public List<Definition> getDefinitions() {
     return mDefinition;
   }
+  public void addDefinition(Definition definition) {
+    mDefinition.add(definition);
+  }
 }
