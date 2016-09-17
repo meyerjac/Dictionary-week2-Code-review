@@ -1,0 +1,18 @@
+body {
+  background-image: url(http://newshour-tc.pbs.org/newshour/wp-content/uploads/2015/09/GettyImages-88006976.jpg);
+}
+
+h1, ul{
+  font-style: oblique;
+  color: rgba(14, 200, 98, 1);
+  font-family: sans-serif;
+}
+
+h3 {
+  color: blue;
+}
+a {
+  color: #445599;
+  font-size: 20px;
+  font-style: oblique;
+}
