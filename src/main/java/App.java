@@ -17,16 +17,16 @@ public class App {
       model.put("words", Word.all());
       model.put("template", "templates/index.vtl");
       return new ModelAndView(model, layout);
-      }, new VelocityTemplateEngine());
+    }, new VelocityTemplateEngine());
 
     post("/", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       String name = request.queryParams("user-word");
-      Word newWord = new Word(name);
+      Word newWord= new Word(name);
       model.put("words", Word.all());
       model.put("template", "templates/index.vtl");
       return new ModelAndView(model, layout);
-      }, new VelocityTemplateEngine());
+    }, new VelocityTemplateEngine());
 
     get("/word/new", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
@@ -38,18 +38,19 @@ public class App {
       Map<String, Object> model = new HashMap<String, Object>();
       Word word = Word.find(Integer.parseInt(request.params(":id")));
       model.put("word", word);
-      model.put("template", "templates/word-form.vtl");
+      model.put("template", "templates/word-definition.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
     post("/word/:id", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       Word word = Word.find(Integer.parseInt(request.params(":id")));
-      String name = request.queryParams("definition");
+
+      String name = request.queryParams("Definition");
       Definition newDefinition = new Definition(name);
       word.addDefinition(newDefinition);
       model.put("word", word);
-      model.put("template", "templates/word-form.vtl");
+      model.put("template", "templates/word.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
@@ -57,7 +58,7 @@ public class App {
         Map<String, Object> model = new HashMap<String, Object>();
         Word word = Word.find(Integer.parseInt(request.params(":id")));
         model.put("word", word);
-        model.put("template", "templates/word-definition-form.vtl");
+        model.put("template", "templates/definition-form.vtl");
         return new ModelAndView(model, layout);
       }, new VelocityTemplateEngine());
   }

@@ -1,3 +1,11 @@
-<h1>List of Words</h1>
-
-<a href = "/word/new">Add new Word</a>
+<h1>List of words</h1>
+#if ($words)
+  <ul>
+    #foreach ($word in $words)
+    <li><a href="word/$word.getId()">$word.getName()</a></li>
+    #end
+  </ul>
+#else
+  <p>No words yet</p>
+#end
+<a href="/word/new">Add New Word</a>

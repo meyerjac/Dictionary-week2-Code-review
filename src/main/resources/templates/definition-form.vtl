@@ -1,11 +1,11 @@
 <h1> Add a new definition to $word.getName()<h1>
 
-<form action="/word/$word.getId()" method="post">
-  input name="wordId" type="hidden" value=$artist.getId()"
+<form action="/word-definition" method="post">
+  <input name="wordId" type="hidden" value="$artist.getId()">
 
   <div class="form-group"
-    <label for="description"> Description:</label>
-    <Input id="Description" name="description" type="text" class="form-control">
+    <label for="Definition"> Definition:</label>
+    <Input id="Definition" name="Definition" type="text" class="form-control">
   </div>
 
-  <button type="submit" class="btn btn-success">Add Description</button>
+  <button type="submit" class="btn btn-success">Add Definition</button>
