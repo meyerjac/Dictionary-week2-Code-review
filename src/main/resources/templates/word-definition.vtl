@@ -1,10 +1,8 @@
 <h1>$word.getName() Definitions: </h1>
-
 <ul>
   #foreach($definition in $word.getDefinitions())
   <li>$definition.getName()</li>
   #end
 </ul>
-
 <a href="/word/$word.getId()/definition/new">Add a new definition</a>
 <a href="/">Go back to dictionary </a>
